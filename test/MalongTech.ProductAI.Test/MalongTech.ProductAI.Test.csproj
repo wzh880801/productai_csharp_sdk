@@ -60,7 +60,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MalongTech.ProductAI.API\MalongTech.ProductAI.API.csproj">
+    <ProjectReference Include="..\..\src\MalongTech.ProductAI.API\MalongTech.ProductAI.API.csproj">
       <Project>{96b9cb97-fefa-438f-9b18-d8e5a850af37}</Project>
       <Name>MalongTech.ProductAI.API</Name>
     </ProjectReference>

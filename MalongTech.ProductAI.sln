@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalongTech.ProductAI.API", "MalongTech.ProductAI.API\MalongTech.ProductAI.API.csproj", "{96B9CB97-FEFA-438F-9B18-D8E5A850AF37}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{3730485D-9C66-46FB-8064-2E4A418E3B2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalongTech.ProductAI.Test", "MalongTech.ProductAI.Test\MalongTech.ProductAI.Test.csproj", "{0A20A9EB-4B73-4E32-AC8B-41992EE3C92A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{24601C26-B007-4972-982E-0ADE3A7F8D43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalongTech.ProductAI.API", "src\MalongTech.ProductAI.API\MalongTech.ProductAI.API.csproj", "{96B9CB97-FEFA-438F-9B18-D8E5A850AF37}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MalongTech.ProductAI.Test", "test\MalongTech.ProductAI.Test\MalongTech.ProductAI.Test.csproj", "{0A20A9EB-4B73-4E32-AC8B-41992EE3C92A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +28,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{96B9CB97-FEFA-438F-9B18-D8E5A850AF37} = {3730485D-9C66-46FB-8064-2E4A418E3B2F}
+		{0A20A9EB-4B73-4E32-AC8B-41992EE3C92A} = {24601C26-B007-4972-982E-0ADE3A7F8D43}
 	EndGlobalSection
 EndGlobal
