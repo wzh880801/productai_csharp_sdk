@@ -2,7 +2,7 @@
 .NET SDK for ProductAI
 
 `ProductAI`: 
-<br>For more details about ProductAI, view [ProductAI offcial site](https://api-doc.productai.cn/doc/pai.htm) [`https://api-doc.productai.cn/doc/pai.htm`](https://api-doc.productai.cn/doc/pai.htm)
+<br>For more details about ProductAI, view [ProductAI offcial site](https://api-doc.productai.cn/doc/pai.html) [`https://api-doc.productai.cn/doc/pai.html`](https://api-doc.productai.cn/doc/pai.html)
 
 # Usage:
 
