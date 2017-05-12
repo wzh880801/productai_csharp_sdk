@@ -5,9 +5,9 @@ namespace MalongTech.ProductAI.API.Entity
     public class ImageContentAnalysisByImageUrlRequest : ImageUrlBaseRequest<ImageContentAnalysisResponse>
     {
         public ImageContentAnalysisByImageUrlRequest(string loc = "0-0-1-1")
-            : base("classify_general", "_0000044")
+            : base("classify_general", "_0000044", loc)
         {
-            this.Loc = loc;
+
         }
 
         public ImageContentAnalysisByImageUrlRequest(string url, string loc = "0-0-1-1")

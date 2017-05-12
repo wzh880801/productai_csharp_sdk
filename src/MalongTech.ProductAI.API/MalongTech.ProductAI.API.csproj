@@ -49,33 +49,61 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\SearchByImageFileBaseRequest.cs.cs" />
     <Compile Include="Base\ImageFileBaseRequest.cs" />
+    <Compile Include="Base\SearchByImageUrlBaseRequest.cs" />
     <Compile Include="Base\ImageUrlBaseRequest.cs" />
     <Compile Include="Base\ProductAIBaseRequest.cs" />
     <Compile Include="Base\ProductAIBaseResponse.cs" />
     <Compile Include="DefaultProfile.cs" />
-    <Compile Include="Entity\Detect3CElectronicsByImageUrlRequest.cs" />
-    <Compile Include="Entity\Detect3CElectronicsByImageFileRequest.cs" />
+    <Compile Include="Entity\ContentAnalysis\DressingClassifyByImageFileRequest.cs" />
+    <Compile Include="Entity\ContentAnalysis\DressingAnalysisResponse.cs" />
+    <Compile Include="Entity\ContentAnalysis\PornographyClassifyByImageFileRequest.cs" />
+    <Compile Include="Entity\ContentAnalysis\PornographyClassifyByImageUrlRequest.cs" />
+    <Compile Include="Entity\ContentAnalysis\PlaceClassifyByImageFileRequest.cs" />
+    <Compile Include="Entity\ContentAnalysis\DressingClassifyByImageUrlRequest.cs" />
+    <Compile Include="Entity\ContentAnalysis\PlaceClassifyByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\DetectOrdinaryProductsByImageFileRequest.cs" />
+    <Compile Include="Entity\Detect\DetectOrdinaryProductsByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\DetectFurnitureAndHouseholdByImageFileRequest.cs" />
+    <Compile Include="Entity\Detect\DetectFoodByImageFileRequest.cs" />
+    <Compile Include="Entity\Detect\DetectPetByImageFileRequest.cs" />
+    <Compile Include="Entity\Detect\DetectFurnitureAndHouseholdByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\DetectFoodByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\DetectPetByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\DetectClothByImageFileRequest.cs" />
+    <Compile Include="Entity\Detect\DetectClothByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\DetectVehicleByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\DetectVehicleByImageFileRequest.cs" />
+    <Compile Include="Entity\Detect\Detect3CElectronicsByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\Detect3CElectronicsByImageFileRequest.cs" />
+    <Compile Include="Entity\ImageSearch\ImageSearchByImageFileRequest.cs" />
+    <Compile Include="Entity\ImageSearch\ImageSearchByImageUrlRequest.cs" />
+    <Compile Include="Entity\ImageSearch\ImageSearchResponse.cs" />
     <Compile Include="ResponseResultEntity\Detect3CElectronicsResult.cs" />
+    <Compile Include="ResponseResultEntity\DressingAnalysisResult.cs" />
     <Compile Include="ResponseResultEntity\IntelligentFilterResult.cs" />
     <Compile Include="ResponseResultEntity\ImageContentAnalysisResult.cs" />
-    <Compile Include="Entity\ImageContentAnalysisResponse.cs" />
-    <Compile Include="Entity\ImageContentAnalysisByImageFileRequest.cs" />
-    <Compile Include="Entity\IntelligentFilterByImageFileRequest.cs" />
-    <Compile Include="Entity\ImageContentAnalysisByImageUrlRequest.cs" />
-    <Compile Include="Entity\DetectResponse.cs" />
-    <Compile Include="Entity\IntelligentFilterResponse.cs" />
-    <Compile Include="Entity\IntelligentFilterByImageUrlRequest.cs" />
+    <Compile Include="Entity\ContentAnalysis\ImageContentAnalysisResponse.cs" />
+    <Compile Include="Entity\ContentAnalysis\ImageContentAnalysisByImageFileRequest.cs" />
+    <Compile Include="Entity\SmartFilter\IntelligentFilterByImageFileRequest.cs" />
+    <Compile Include="Entity\ContentAnalysis\ImageContentAnalysisByImageUrlRequest.cs" />
+    <Compile Include="Entity\Detect\DetectResponse.cs" />
+    <Compile Include="Entity\SmartFilter\IntelligentFilterResponse.cs" />
+    <Compile Include="Entity\SmartFilter\IntelligentFilterByImageUrlRequest.cs" />
     <Compile Include="Helper\FileHelper.cs" />
     <Compile Include="Interface\IProfile.cs" />
     <Compile Include="DefaultProductAIClient.cs" />
     <Compile Include="Common\ParaSignAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseResultEntity\SearchResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Entity\DataSet\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

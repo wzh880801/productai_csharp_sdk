@@ -15,22 +15,46 @@ namespace MalongTech.ProductAI.Test
             var profile = new DefaultProfile
             {
                 Version = "1",
-                AccessKeyId = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-                SecretKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+                AccessKeyId = "XXXXXXXXXXXXXXXXXXXXXXX",
+                SecretKey = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
             };
             var client = new DefaultProductAIClient(profile);
-            var request = new Detect3CElectronicsByImageFileRequest
+
+            //var request = new Detect3CElectronicsByImageFileRequest
+            //{
+            //    ImageFile = new System.IO.FileInfo(@".\phone.jpg")
+            //};
+
+            //var request = new ImageSearchByImageUrlRequest("ffhqzkee")
+            //{
+            //    Url = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
+            //    Count = 2,
+            //    Threshold = 0.8,
+            //    SearchTags = new List<string> { "上衣", "短袖" }
+            //};
+
+            var request = new ImageSearchByImageFileRequest("ffhqzkee")
             {
-                ImageFile = new System.IO.FileInfo(@".\phone.jpg")
+                ImageFile = new System.IO.FileInfo(@".\phone.jpg"),
+                Count = 2,
+                Threshold = 0.8,
+                SearchTags = new List<string> { "上衣", "短袖" }
             };
+
             var response = client.Execute(request);
             if(response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                foreach(var r in response.DetectedBoxes)
+                foreach(var r in response.Results)
                 {
-                    Console.WriteLine("{0}\t{1}", r.Type, r.Score);
+                    Console.WriteLine("{0}\t{1}", r.Url, r.Score);
                 }
             }
+            else
+            {
+                Console.WriteLine("Request failed! " + response.ErrorMsg);
+            }
+
+            Console.WriteLine("Done");
             Console.ReadLine();
         }
     }

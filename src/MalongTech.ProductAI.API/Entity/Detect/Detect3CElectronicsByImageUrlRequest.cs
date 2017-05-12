@@ -7,7 +7,7 @@ namespace MalongTech.ProductAI.API.Entity
         public Detect3CElectronicsByImageUrlRequest(string loc = "0-0-1-1")
             : base("detect_3c_and_electronics", "_0000027", loc)
         {
-            this.Loc = loc;
+            
         }
 
         public Detect3CElectronicsByImageUrlRequest(string url, string loc = "0-0-1-1")

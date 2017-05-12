@@ -47,7 +47,25 @@ namespace MalongTech.ProductAI.API
                     var ca = p.GetCustomAttribute(typeof(ParaSignAttribute));
                     if (ca != null)
                     {
-                        dics.Add(((ParaSignAttribute)ca).Name, string.Format("{0}", p.GetValue(request)));
+                        var _ca = ca as ParaSignAttribute;
+                        var value = p.GetValue(request);
+                        if (p.PropertyType == typeof(System.String))
+                        {
+                            if (value != null && !string.IsNullOrWhiteSpace(value.ToString()))
+                                dics.Add(_ca.Name, string.Format("{0}", value));
+                        }
+                        else if (p.PropertyType == typeof(int?))
+                        {
+                            var v = value as int?;
+                            if (v != null)
+                                dics.Add(_ca.Name, string.Format("{0}", value));
+                        }
+                        else if (p.PropertyType == typeof(double?))
+                        {
+                            var v = value as double?;
+                            if (v != null)
+                                dics.Add(_ca.Name, string.Format("{0}", value));
+                        }
                     }
                 }
 

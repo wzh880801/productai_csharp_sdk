@@ -69,7 +69,6 @@ namespace MalongTech.ProductAI.API
         public ImageFileBaseRequest(string serviceType, string serviceId, string loc = "0-0-1-1")
                 : this(serviceType, serviceId)
         {
-            _boundary = Helper.FileHelper.GetBoundary();
             this.Loc = loc;
         }
 
