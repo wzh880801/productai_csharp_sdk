@@ -15,8 +15,8 @@ namespace MalongTech.ProductAI.Test
             var profile = new DefaultProfile
             {
                 Version = "1",
-                AccessKeyId = "XXXXXXXXXXXXXXXXXXXXXXX",
-                SecretKey = "XXXXXXXXXXXXXXXXXXXXXXXXXX"
+                AccessKeyId = "XXXXXXXXXXXXXXXXX",
+                SecretKey = "XXXXXXXXXXXXXXXXXX"
             };
             var client = new DefaultProductAIClient(profile);
 
@@ -33,25 +33,33 @@ namespace MalongTech.ProductAI.Test
             //    SearchTags = new List<string> { "上衣", "短袖" }
             //};
 
-            var request = new ImageSearchByImageFileRequest("ffhqzkee")
+            //var request = new ImageSearchByImageFileRequest("ffhqzkee")
+            //{
+            //    ImageFile = new System.IO.FileInfo(@".\phone.jpg"),
+            //    Count = 2,
+            //    Threshold = 0.8,
+            //    SearchTags = new List<string> { "上衣", "短袖" }
+            //};
+
+            var request = new DataSetSingleAddByImageUrlRequest("bd7nvc27")
             {
-                ImageFile = new System.IO.FileInfo(@".\phone.jpg"),
-                Count = 2,
-                Threshold = 0.8,
-                SearchTags = new List<string> { "上衣", "短袖" }
+                ImageUrl = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
+                SearchTags = new List<string> { "上衣" }
             };
 
             var response = client.Execute(request);
             if(response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                foreach(var r in response.Results)
-                {
-                    Console.WriteLine("{0}\t{1}", r.Url, r.Score);
-                }
+                //foreach(var r in response.Results)
+                //{
+                //    Console.WriteLine("{0}\t{1}", r.Url, r.Score);
+                //}
+
+                Console.WriteLine(response.LastModifiedTime);
             }
             else
             {
-                Console.WriteLine("Request failed! " + response.ErrorMsg);
+                Console.WriteLine("Request failed! " + response.Message);
             }
 
             Console.WriteLine("Done");

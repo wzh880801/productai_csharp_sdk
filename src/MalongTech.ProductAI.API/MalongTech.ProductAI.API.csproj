@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\DataSetSingleModifyByUrlBaseRequest.cs" />
+    <Compile Include="Base\DataSetBatchModifyByFileBaseRequest.cs" />
     <Compile Include="Base\SearchByImageFileBaseRequest.cs.cs" />
     <Compile Include="Base\ImageFileBaseRequest.cs" />
     <Compile Include="Base\SearchByImageUrlBaseRequest.cs" />
@@ -63,6 +65,10 @@
     <Compile Include="Entity\ContentAnalysis\PlaceClassifyByImageFileRequest.cs" />
     <Compile Include="Entity\ContentAnalysis\DressingClassifyByImageUrlRequest.cs" />
     <Compile Include="Entity\ContentAnalysis\PlaceClassifyByImageUrlRequest.cs" />
+    <Compile Include="Entity\DataSet\DataSetSingleAddByImageUrlRequest.cs" />
+    <Compile Include="Entity\DataSet\DataSetBatchAddRequest.cs" />
+    <Compile Include="Entity\DataSet\DataSetBatchDeleteRequest.cs" />
+    <Compile Include="Entity\DataSet\DataSetModifyResponse.cs" />
     <Compile Include="Entity\Detect\DetectOrdinaryProductsByImageFileRequest.cs" />
     <Compile Include="Entity\Detect\DetectOrdinaryProductsByImageUrlRequest.cs" />
     <Compile Include="Entity\Detect\DetectFurnitureAndHouseholdByImageFileRequest.cs" />
@@ -101,9 +107,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entity\DataSet\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
