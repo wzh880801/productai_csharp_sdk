@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class ImageContentAnalysisByImageUrlRequest : ProductAIBaseRequest<ImageContentAnalysisByImageUrlResponse>
+    public class ImageContentAnalysisByImageUrlRequest : ProductAIBaseRequest<ImageContentAnalysisResponse>
     {
         public override string ApiUrl
         {

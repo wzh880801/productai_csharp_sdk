@@ -4,7 +4,7 @@ using System.IO;
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class IntelligentFilterByImageFileRequest : ProductAIBaseRequest<IntelligentFilterByImageFileResponse>
+    public class IntelligentFilterByImageFileRequest : ProductAIBaseRequest<IntelligentFilterResponse>
     {
         public override string ApiUrl
         {

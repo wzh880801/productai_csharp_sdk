@@ -4,13 +4,13 @@ using System.IO;
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class ImageContentAnalysisByImageFileRequest : ProductAIBaseRequest<ImageContentAnalysisResponse>
+    public class Detect3CElectronicsByImageFileRequest : ProductAIBaseRequest<Detect3CElectronicsResponse>
     {
         public override string ApiUrl
         {
             get
             {
-                return string.Format("https://{0}/classify_general/_0000044/", this.Host);
+                return string.Format("https://{0}/detect_3c_and_electronics/_0000027/", this.Host);
             }
         }
 
@@ -47,14 +47,14 @@ namespace MalongTech.ProductAI.API.Entity
 
         public FileInfo ImageFile { get; set; }
 
-        public ImageContentAnalysisByImageFileRequest(string loc = "0-0-1-1")
+        public Detect3CElectronicsByImageFileRequest(string loc = "0-0-1-1")
             : base()
         {
             _boundary = Helper.FileHelper.GetBoundary();
             this.Loc = loc;
         }
 
-        public ImageContentAnalysisByImageFileRequest(FileInfo imageFile, string loc = "0-0-1-1")
+        public Detect3CElectronicsByImageFileRequest(FileInfo imageFile, string loc = "0-0-1-1")
             : this(loc)
         {
             this.ImageFile = imageFile;

@@ -2,13 +2,13 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class IntelligentFilterByImageUrlRequest : ProductAIBaseRequest<IntelligentFilterResponse>
+    public class Detect3CElectronicsByImageUrlRequest : ProductAIBaseRequest<Detect3CElectronicsResponse>
     {
         public override string ApiUrl
         {
             get
             {
-                return string.Format("https://{0}/classify_art/_0000015/", this.Host);
+                return string.Format("https://{0}/detect_3c_and_electronics/_0000027/", this.Host);
             }
         }
 
@@ -26,13 +26,13 @@ namespace MalongTech.ProductAI.API.Entity
         [ParaSign("loc")]
         public string Loc { get; set; }
 
-        public IntelligentFilterByImageUrlRequest(string loc = "0-0-1-1")
+        public Detect3CElectronicsByImageUrlRequest(string loc = "0-0-1-1")
             : base()
         {
             this.Loc = loc;
         }
 
-        public IntelligentFilterByImageUrlRequest(string url, string loc = "0-0-1-1")
+        public Detect3CElectronicsByImageUrlRequest(string url, string loc = "0-0-1-1")
             : this(loc)
         {
             this.Url = url;
