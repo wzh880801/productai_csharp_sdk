@@ -15,8 +15,8 @@ namespace MalongTech.ProductAI.Test
             var profile = new DefaultProfile
             {
                 Version = "1",
-                AccessKeyId = "XXXXXXXXXXXXXXXXX",
-                SecretKey = "XXXXXXXXXXXXXXXXXX"
+                AccessKeyId = "XXXXXXXXXXXXXXXXXXXXX",
+                SecretKey = "XXXXXXXXXXXXXXXXXXXXXX"
             };
             var client = new DefaultProductAIClient(profile);
 
@@ -41,10 +41,17 @@ namespace MalongTech.ProductAI.Test
             //    SearchTags = new List<string> { "上衣", "短袖" }
             //};
 
-            var request = new DataSetSingleAddByImageUrlRequest("bd7nvc27")
+            //Single Add
+            //var request = new DataSetSingleAddByImageUrlRequest("bd7nvc27")
+            //{
+            //    ImageUrl = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
+            //    SearchTags = new List<string> { "上衣" }
+            //};
+
+            //Batch Add
+            var request = new DataSetBatchAddRequest("bd7nvc27")
             {
-                ImageUrl = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
-                SearchTags = new List<string> { "上衣" }
+                CsvFile = new System.IO.FileInfo(@".\example.csv")
             };
 
             var response = client.Execute(request);
