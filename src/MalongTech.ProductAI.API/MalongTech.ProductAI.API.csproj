@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\ImageFileBaseRequest.cs" />
+    <Compile Include="Base\ImageUrlBaseRequest.cs" />
     <Compile Include="Base\ProductAIBaseRequest.cs" />
     <Compile Include="Base\ProductAIBaseResponse.cs" />
     <Compile Include="DefaultProfile.cs" />
@@ -61,7 +63,7 @@
     <Compile Include="Entity\ImageContentAnalysisByImageFileRequest.cs" />
     <Compile Include="Entity\IntelligentFilterByImageFileRequest.cs" />
     <Compile Include="Entity\ImageContentAnalysisByImageUrlRequest.cs" />
-    <Compile Include="Entity\Detect3CElectronicsResponse.cs" />
+    <Compile Include="Entity\DetectResponse.cs" />
     <Compile Include="Entity\IntelligentFilterResponse.cs" />
     <Compile Include="Entity\IntelligentFilterByImageUrlRequest.cs" />
     <Compile Include="Helper\FileHelper.cs" />

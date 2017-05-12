@@ -3,10 +3,10 @@ using Newtonsoft.Json;
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class Detect3CElectronicsResponse : ProductAIBaseResponse
+    public class DetectResponse : ProductAIBaseResponse
     {
         [JsonProperty("boxes_detected")]
-        public Detect3CElectronicsResult[] DetectedBoxes { get; set; }
+        public DetectResult[] DetectedBoxes { get; set; }
 
         [JsonProperty("detecttime")]
         public double DetectTime { get; set; }

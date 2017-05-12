@@ -15,8 +15,8 @@ namespace MalongTech.ProductAI.Test
             var profile = new DefaultProfile
             {
                 Version = "1",
-                AccessKeyId = "*****************",
-                SecretKey = "*******************"
+                AccessKeyId = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+                SecretKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
             };
             var client = new DefaultProductAIClient(profile);
             var request = new Detect3CElectronicsByImageFileRequest

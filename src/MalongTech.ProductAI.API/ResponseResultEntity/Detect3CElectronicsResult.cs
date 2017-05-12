@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class Detect3CElectronicsResult
+    public class DetectResult
     {
         [JsonProperty("box")]
         public decimal[] BoxLocation { get; set; }
