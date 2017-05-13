@@ -132,7 +132,7 @@ if(response.StatusCode == System.Net.HttpStatusCode.OK)
 }
 ```
 
-### * detect_vehicle by local image file(使用图片Url检测交通工具)
+### * detect_vehicle by image url(使用图片Url检测交通工具)
 ```C#
 var request = new DetectVehicleByImageUrlRequest
 {
