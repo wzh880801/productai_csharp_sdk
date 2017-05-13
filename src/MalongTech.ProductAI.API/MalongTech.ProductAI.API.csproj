@@ -35,7 +35,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="SimpleWebRequestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SimpleWebRequestHelper.1.1.3\lib\SimpleWebRequestHelper.dll</HintPath>
+      <HintPath>..\..\packages\SimpleWebRequestHelper.1.1.4\lib\SimpleWebRequestHelper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
