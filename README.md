@@ -1,7 +1,7 @@
 # .NET SDK for ProductAI
 .NET SDK for ProductAI
 
-`ProductAI`: 
+## ProductAI: 
 <br>For more details about ProductAI, view [ProductAI offcial site](https://api-doc.productai.cn/doc/pai.html) [`https://api-doc.productai.cn/doc/pai.html`](https://api-doc.productai.cn/doc/pai.html)
 
 # Usage:
@@ -21,7 +21,9 @@ namespace MalongTech.ProductAI.Test
     {
         static void Main(string[] args)
         {
-            var profile = new DefaultProfile
+            //Setup your account profile
+            //账户初始化
+            var profile = new DefaultProfile
             {
                 Version = "1",
                 AccessKeyId = "XXXXXXXXXXXXXXXXXXXXX",
@@ -29,49 +31,27 @@ namespace MalongTech.ProductAI.Test
             };
             var client = new DefaultProductAIClient(profile);
 
-            //var request = new Detect3CElectronicsByImageFileRequest
-            //{
-            //    ImageFile = new System.IO.FileInfo(@".\phone.jpg")
-            //};
-
-            //var request = new ImageSearchByImageUrlRequest("ffhqzkee")
-            //{
-            //    Url = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
-            //    Count = 2,
-            //    Threshold = 0.8,
-            //    SearchTags = new List<string> { "上衣", "短袖" }
-            //};
-
-            //var request = new ImageSearchByImageFileRequest("ffhqzkee")
-            //{
-            //    ImageFile = new System.IO.FileInfo(@".\phone.jpg"),
-            //    Count = 2,
-            //    Threshold = 0.8,
-            //    SearchTags = new List<string> { "上衣", "短袖" }
-            //};
-
-            //Single Add
-            //var request = new DataSetSingleAddByImageUrlRequest("bd7nvc27")
-            //{
-            //    ImageUrl = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
-            //    SearchTags = new List<string> { "上衣" }
-            //};
-
-            //Batch Add
-            var request = new DataSetBatchAddRequest("bd7nvc27")
+            //Build your request and just simple send it out using DefaultProductAIClient
+            //你需要做的是初始化request然后通过DefaultProductAIClient发送给ProductAI服务器
+            var request = new ImageSearchByImageUrlRequest("ffhqzkee")
             {
-                CsvFile = new System.IO.FileInfo(@".\example.csv")
+                Url = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
+                Count = 2,
+                Threshold = 0.8,
+                SearchTags = new List<string> { "上衣", "短袖" }
             };
 
-            var response = client.Execute(request);
-            if(response.StatusCode == System.Net.HttpStatusCode.OK)
+            //ProductAI Server will process your request and send back the response
+            //ProductAI服务器会处理你的请求并返回处理结果
+            var response = client.Execute(request);
+            if(response.StatusCode == System.Net.HttpStatusCode.OK)
             {
-                //foreach(var r in response.Results)
-                //{
-                //    Console.WriteLine("{0}\t{1}", r.Url, r.Score);
-                //}
-
-                Console.WriteLine(response.LastModifiedTime);
+                //You can access the entity directly
+                //你可以直接访问返回的实体
+                foreach(var r in response.Results)
+                {
+                    Console.WriteLine("{0}\t{1}", r.Url, r.Score);
+                }
             }
             else
             {
@@ -85,7 +65,7 @@ namespace MalongTech.ProductAI.Test
 }
 ```
 
-# Support async...
+# Support async
 
 ```C#
 var request = new ImageContentAnalysisByImageUrlRequest
@@ -93,4 +73,39 @@ var request = new ImageContentAnalysisByImageUrlRequest
     Url = "http://dimg3.s-9in.com/imageadapter/w220h220q80/stimg4.s-9in.com/www9incom/2016/10/25/db18a2d1-bf45-439b-950f-a5b21782b62c.jpg"
 };
 var response = await client.ExecuteAsync(request);
+```
+
+# Examples
+# 图像内物体检测与定位
+## 3C电器检测与定位(detect_3c_and_electronics)
+### * detect_3c_and_electronics by local image file(使用本地图片文件检测3C电器)
+```C#
+var request = new Detect3CElectronicsByImageFileRequest
+{
+    ImageFile = new System.IO.FileInfo(@".\phone.jpg")
+};
+var response = client.Execute(request);
+if(response.StatusCode == System.Net.HttpStatusCode.OK)
+{
+    foreach (var r in response.DetectedBoxes)
+    {
+        Console.WriteLine("{0}\t{1}", r.Type, r.Score);
+    }
+}
+```
+### * detect_3c_and_electronics by image url(使用图片Url检测3C电器)
+```C#
+var request = new Detect3CElectronicsByImageUrlRequest
+{
+    Url = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
+    Loc = "0-0-1-1"//optional
+};
+var response = client.Execute(request);
+if(response.StatusCode == System.Net.HttpStatusCode.OK)
+{
+    foreach (var r in response.DetectedBoxes)
+    {
+        Console.WriteLine("{0}\t{1}", r.Type, r.Score);
+    }
+}
 ```
