@@ -6,6 +6,10 @@
 
 # Usage（用法）:
 
+This SDK depends on SimpleWebRequestHelper, which you could find the source code at [SimpleWebRequestHelper](https://github.com/wzh880801/SimpleWebRequestHelper)[`https://github.com/wzh880801/SimpleWebRequestHelper`](https://github.com/wzh880801/SimpleWebRequestHelper). Or you could add http://nuget.esobing.com/nuget to your package source.
+
+此SDK依赖于SimpleWebRequestHelper，你可以通过访问这个仓库获取它的源代码[SimpleWebRequestHelper](https://github.com/wzh880801/SimpleWebRequestHelper)[`https://github.com/wzh880801/SimpleWebRequestHelper`](https://github.com/wzh880801/SimpleWebRequestHelper). 或者你可以添加如下nuget库来让VS自动解决引用：http://nuget.esobing.com/nuget
+
 ```C#
 using System;
 using System.Collections.Generic;
