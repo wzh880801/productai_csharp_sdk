@@ -197,7 +197,7 @@ if(response.StatusCode == System.Net.HttpStatusCode.OK)
 ## 从数据集删除多条数据(batch delete data from image data set)
 
 ```C#
-var request = new DataSetBatchDeleteRequest("bd7nvc27")//bd7nvc27 is you data set id
+var request = new DataSetBatchDeleteRequest("bd7nvc27")//bd7nvc27 is your data set id
 {
     CsvFile = new System.IO.FileInfo(@".\example.csv")
 };
@@ -212,7 +212,7 @@ if(response.StatusCode == System.Net.HttpStatusCode.OK)
 ## 向数据集增加单条数据(add single data to image data set)
 
 ```C#
-var request = new DataSetSingleAddByImageUrlRequest("bd7nvc27")//bd7nvc27 is you data set id
+var request = new DataSetSingleAddByImageUrlRequest("bd7nvc27")//bd7nvc27 is your data set id
 {
     ImageUrl = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
     SearchTags = new List<string> { "上衣" }//set tags
@@ -227,7 +227,7 @@ if(response.StatusCode == System.Net.HttpStatusCode.OK)
 ## 向数据集增加多条数据(batch add data to image data set)
 
 ```C#
-var request = new DataSetBatchAddRequest("bd7nvc27")//bd7nvc27 is you data set id
+var request = new DataSetBatchAddRequest("bd7nvc27")//bd7nvc27 is your data set id
 {
     CsvFile = new System.IO.FileInfo(@".\example.csv")
 };
