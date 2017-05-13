@@ -4,7 +4,7 @@
 ## ProductAI: 
 <br>For more details about ProductAI, view [ProductAI offcial site](https://api-doc.productai.cn/doc/pai.html) [`https://api-doc.productai.cn/doc/pai.html`](https://api-doc.productai.cn/doc/pai.html)
 
-# Usage:
+# Usage（用法）:
 
 ```C#
 using System;
@@ -65,7 +65,7 @@ namespace MalongTech.ProductAI.Test
 }
 ```
 
-# Support async
+# Support async (支持异步)
 
 ```C#
 var request = new ImageContentAnalysisByImageUrlRequest
@@ -79,6 +79,7 @@ var response = await client.ExecuteAsync(request);
 # 图像内物体检测与定位
 ## 3C电器检测与定位(detect_3c_and_electronics)
 ### * detect_3c_and_electronics by local image file(使用本地图片文件检测3C电器)
+
 ```C#
 var request = new Detect3CElectronicsByImageFileRequest
 {
@@ -93,9 +94,47 @@ if(response.StatusCode == System.Net.HttpStatusCode.OK)
     }
 }
 ```
+
 ### * detect_3c_and_electronics by image url(使用图片Url检测3C电器)
+
 ```C#
 var request = new Detect3CElectronicsByImageUrlRequest
+{
+    Url = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
+    Loc = "0-0-1-1"//optional
+};
+var response = client.Execute(request);
+if(response.StatusCode == System.Net.HttpStatusCode.OK)
+{
+    foreach (var r in response.DetectedBoxes)
+    {
+        Console.WriteLine("{0}\t{1}", r.Type, r.Score);
+    }
+}
+```
+
+## 交通工具检测与定位(detect_vehicle)
+### * detect_vehicle by local image file(使用本地图片文件检测交通工具)
+
+```C#
+var request = new DetectVehicleByImageFileRequest
+{
+    ImageFile = new System.IO.FileInfo(@".\phone.jpg"),
+    Loc = "0-0-1-1"//optional
+};
+var response = client.Execute(request);
+if(response.StatusCode == System.Net.HttpStatusCode.OK)
+{
+    foreach (var r in response.DetectedBoxes)
+    {
+        Console.WriteLine("{0}\t{1}", r.Type, r.Score);
+    }
+}
+```
+
+### * detect_vehicle by local image file(使用图片Url检测交通工具)
+```C#
+var request = new DetectVehicleByImageUrlRequest
 {
     Url = "http://www.softsew.com/images/Moved%20from%20Main/More_Clothes.jpg",
     Loc = "0-0-1-1"//optional
