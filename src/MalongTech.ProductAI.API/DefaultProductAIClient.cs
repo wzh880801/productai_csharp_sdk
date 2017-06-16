@@ -75,7 +75,7 @@ namespace MalongTech.ProductAI.API
             base.SetHost<T>(request);
         }
 
-        protected string Signnature(Dictionary<string,string> paras)
+        protected string Signnature(Dictionary<string, string> paras)
         {
             var excludeKeys = new string[] { "x-ca-signature", "x-ca-file-md5" };
             var res = new List<string>();
