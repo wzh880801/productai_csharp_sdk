@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class DetectVehicleByImageFileRequest : ImageFileBaseRequest<DetectResponse>
+    public class DetectVehicleByImageFileRequest : CallApiByImageFileBaseRequest<DetectResponse>
     {
         public DetectVehicleByImageFileRequest(string loc = "0-0-1-1")
             : base("detect_vehicle", "_0000033", loc)

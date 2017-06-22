@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class PlaceClassifyByImageFileRequest : ImageFileBaseRequest<ImageContentAnalysisResponse>
+    public class PlaceClassifyByImageFileRequest : CallApiByImageFileBaseRequest<ImageContentAnalysisResponse>
     {
         public PlaceClassifyByImageFileRequest(string loc = "0-0-1-1")
             : base("classify_place_cls", "_0000039", loc)

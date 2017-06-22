@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class DetectPetByImageUrlRequest : ImageUrlBaseRequest<DetectResponse>
+    public class DetectPetByImageUrlRequest : CallApiByImageUrlBaseRequest<DetectResponse>
     {
         public DetectPetByImageUrlRequest(string loc = "0-0-1-1")
             : base("detect_pet", "_0000031", loc)

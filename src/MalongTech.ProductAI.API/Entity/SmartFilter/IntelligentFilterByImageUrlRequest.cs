@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class IntelligentFilterByImageUrlRequest : ImageUrlBaseRequest<IntelligentFilterResponse>
+    public class IntelligentFilterByImageUrlRequest : CallApiByImageUrlBaseRequest<IntelligentFilterResponse>
     {
         public IntelligentFilterByImageUrlRequest(string loc = "0-0-1-1")
             : base("classify_art", "_0000015")

@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class ImageContentAnalysisByImageFileRequest : ImageFileBaseRequest<ImageContentAnalysisResponse>
+    public class ImageContentAnalysisByImageFileRequest : CallApiByImageFileBaseRequest<ImageContentAnalysisResponse>
     {
         public ImageContentAnalysisByImageFileRequest(string loc = "0-0-1-1")
             : base("classify_general", "_0000044", loc)

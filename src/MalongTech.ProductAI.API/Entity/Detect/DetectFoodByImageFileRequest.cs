@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class DetectFoodByImageFileRequest : ImageFileBaseRequest<DetectResponse>
+    public class DetectFoodByImageFileRequest : CallApiByImageFileBaseRequest<DetectResponse>
     {
         public DetectFoodByImageFileRequest(string loc = "0-0-1-1")
             : base("detect_food", "detect_food", loc)

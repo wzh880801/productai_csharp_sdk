@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class DetectClothByImageFileRequest : ImageFileBaseRequest<DetectResponse>
+    public class DetectClothByImageFileRequest : CallApiByImageFileBaseRequest<DetectResponse>
     {
         public DetectClothByImageFileRequest(string loc = "0-0-1-1")
             : base("detect_cloth", "_0000025", loc)

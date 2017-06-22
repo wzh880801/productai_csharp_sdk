@@ -5,7 +5,7 @@ using SimpleWebRequestHelper.Entity;
 
 namespace MalongTech.ProductAI.API
 {
-    public abstract class ImageFileBaseRequest<T> : ProductAIBaseRequest<T>
+    public abstract class CallApiByImageFileBaseRequest<T> : ProductAIBaseRequest<T>
         where T : ProductAIBaseResponse
     {
         private string _serviceType = "";
@@ -52,7 +52,7 @@ namespace MalongTech.ProductAI.API
 
         public FileInfo ImageFile { get; set; }
 
-        public ImageFileBaseRequest(string serviceType, string serviceId)
+        public CallApiByImageFileBaseRequest(string serviceType, string serviceId)
         : base()
         {
             if (string.IsNullOrWhiteSpace(serviceType))
@@ -66,13 +66,13 @@ namespace MalongTech.ProductAI.API
             this._boundary = Helper.FileHelper.GetBoundary();
         }
 
-        public ImageFileBaseRequest(string serviceType, string serviceId, string loc = "0-0-1-1")
+        public CallApiByImageFileBaseRequest(string serviceType, string serviceId, string loc = "0-0-1-1")
                 : this(serviceType, serviceId)
         {
             this.Loc = loc;
         }
 
-        public ImageFileBaseRequest(string serviceType, string serviceId, FileInfo imageFile, string loc = "0-0-1-1")
+        public CallApiByImageFileBaseRequest(string serviceType, string serviceId, FileInfo imageFile, string loc = "0-0-1-1")
                 : this(serviceType, serviceId, loc)
         {
             this.ImageFile = imageFile;

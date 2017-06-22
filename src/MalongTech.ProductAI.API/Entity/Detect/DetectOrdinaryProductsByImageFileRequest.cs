@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class DetectOrdinaryProductsByImageFileRequest : ImageFileBaseRequest<DetectResponse>
+    public class DetectOrdinaryProductsByImageFileRequest : CallApiByImageFileBaseRequest<DetectResponse>
     {
         public DetectOrdinaryProductsByImageFileRequest(string loc = "0-0-1-1")
             : base("detect_ordinary_products", "_0000030", loc)

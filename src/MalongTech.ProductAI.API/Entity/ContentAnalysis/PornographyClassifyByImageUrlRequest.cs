@@ -2,7 +2,7 @@
 
 namespace MalongTech.ProductAI.API.Entity
 {
-    public class PornographyClassifyByImageUrlRequest : ImageUrlBaseRequest<ImageContentAnalysisResponse>
+    public class PornographyClassifyByImageUrlRequest : CallApiByImageUrlBaseRequest<ImageContentAnalysisResponse>
     {
         public PornographyClassifyByImageUrlRequest(string loc = "0-0-1-1")
             : base("classify_porn", "_0000024", loc)

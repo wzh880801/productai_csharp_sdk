@@ -50,9 +50,9 @@
     <Compile Include="Base\DataSetSingleModifyByUrlBaseRequest.cs" />
     <Compile Include="Base\DataSetBatchModifyByFileBaseRequest.cs" />
     <Compile Include="Base\SearchByImageFileBaseRequest.cs.cs" />
-    <Compile Include="Base\ImageFileBaseRequest.cs" />
+    <Compile Include="Base\CallApiByImageFileBaseRequest.cs" />
     <Compile Include="Base\SearchByImageUrlBaseRequest.cs" />
-    <Compile Include="Base\ImageUrlBaseRequest.cs" />
+    <Compile Include="Base\CallApiByImageUrlBaseRequest.cs" />
     <Compile Include="Base\ProductAIBaseRequest.cs" />
     <Compile Include="Base\ProductAIBaseResponse.cs" />
     <Compile Include="DefaultProfile.cs" />
