@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using SimpleWebRequestHelper.Entity;
+using System.Reflection;
 
 namespace MalongTech.ProductAI.API
 {
@@ -34,7 +34,35 @@ namespace MalongTech.ProductAI.API
             get
             {
                 var options = new Dictionary<string, string>();
-                options.Add("loc", this.Loc);
+                var ps = this.GetType().GetProperties();
+                foreach (var p in ps)
+                {
+                    var ca = p.GetCustomAttribute(typeof(ParaSignAttribute));
+                    if (ca != null)
+                    {
+                        var _ca = ca as ParaSignAttribute;
+                        var value = p.GetValue(this);
+                        if (p.PropertyType == typeof(System.String))
+                        {
+                            if (value != null && !string.IsNullOrWhiteSpace(value.ToString()))
+                            {
+                                options.Add(_ca.Name, value.ToString());
+                            }
+                        }
+                        else if (p.PropertyType == typeof(int?))
+                        {
+                            var v = value as int?;
+                            if (v != null)
+                                options.Add(_ca.Name, string.Format("{0}", v));
+                        }
+                        else if (p.PropertyType == typeof(double?))
+                        {
+                            var v = value as double?;
+                            if (v != null)
+                                options.Add(_ca.Name, string.Format("{0}", v));
+                        }
+                    }
+                }
                 return Helper.FileHelper.GetMultipartBytes(this.ImageFile, _boundary, options, "search");
             }
         }

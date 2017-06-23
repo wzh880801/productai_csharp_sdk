@@ -71,7 +71,7 @@ namespace MalongTech.ProductAI.API
             this._serviceId = serviceId;
         }
 
-        [ParaSign("url")]
+        [ParaSign("url", true)]
         public string Url { get; set; }
 
         [ParaSign("loc")]
