@@ -1,3 +1,7 @@
+# 说明
+
+请使用官方版本：https://github.com/MalongTech/productai-csharp-sdk
+
 # .NET SDK for ProductAI
 .NET SDK for ProductAI
 
